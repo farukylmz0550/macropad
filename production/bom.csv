@@ -1,0 +1,6 @@
+ID,Name,Designator,Quantity
+1,1x5 JST-XH,KY-040,1
+2,1x2 JST XH,"S5,SW1,SW2,SW3,SW4,SW6",6
+3,1X4 JST-XH,SSD1306,1
+4,Arduino Leonardo,U1,1
+5,2.54 mm Male Pin Header,Arduino Shiled Pins,32
