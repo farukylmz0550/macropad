@@ -1,0 +1,47 @@
+{
+    "keyboard_name": "MacroPad V3",
+    "manufacturer": "farukylmz0550",
+    "maintainer": "farukylmz0550",
+    "processor": "atmega32u4",
+    "bootloader": "caterina",
+    "usb": {
+        "vid": "0xFEED",
+        "pid": "0x6060",
+        "device_version": "3.0.0"
+    },
+    "build": {
+        "lto": true
+    },
+    "features": {
+        "bootmagic": false,
+        "encoder": true,
+        "extrakey": true,
+        "mousekey": false,
+        "nkro": false
+    },
+    "dynamic_keymap": {
+        "layer_count": 2
+    },
+    "matrix_pins": {
+        "direct": [
+            ["E6", "B4", "B5", "D6", "B6", "D7"]
+        ]
+    },
+    "encoder": {
+        "rotary": [
+            {"pin_a": "D4", "pin_b": "C6", "resolution": 4}
+        ]
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label": "SW1", "matrix": [0, 0], "x": 0, "y": 0},
+                {"label": "SW2", "matrix": [0, 1], "x": 1, "y": 0},
+                {"label": "SW3", "matrix": [0, 2], "x": 2, "y": 0},
+                {"label": "SW4", "matrix": [0, 3], "x": 3, "y": 0},
+                {"label": "SW6", "matrix": [0, 4], "x": 4, "y": 0},
+                {"label": "Encoder click", "matrix": [0, 5], "x": 5.5, "y": 0}
+            ]
+        }
+    }
+}

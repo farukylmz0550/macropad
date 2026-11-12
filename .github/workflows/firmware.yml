@@ -1,0 +1,34 @@
+name: Firmware
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  qmk-0-34-0:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: qmk/qmk_firmware
+          ref: 0.34.0
+          path: qmk_firmware
+          submodules: recursive
+      - name: Install AVR and QMK dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y avr-libc binutils-avr gcc-avr
+          python3 -m pip install --user -r qmk_firmware/requirements.txt
+          python3 -m pip install --user qmk==1.2.0
+      - name: Lint, compile, and enforce memory limits
+        env:
+          QMK_HOME: ${{ github.workspace }}/qmk_firmware
+        run: ./scripts/build-firmware.sh
+      - name: Upload Caterina HEX files
+        uses: actions/upload-artifact@v4
+        with:
+          name: macropad-v3-qmk-0.34.0
+          path: build/*.hex
+          if-no-files-found: error

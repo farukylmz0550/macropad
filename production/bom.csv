@@ -1,6 +1,11 @@
-ID,Name,Designator,Quantity
-1,1x5 JST-XH,KY-040,1
-2,1x2 JST XH,"S5,SW1,SW2,SW3,SW4,SW6",6
-3,1X4 JST-XH,SSD1306,1
-4,Arduino Leonardo,U1,1
-5,2.54 mm Male Pin Header,Arduino Shiled Pins,32
+Designators,Quantity,Value / description,Mounting,Board-side part,Required mating part,Notes
+U1,1,Arduino Leonardo with ATmega32U4,Socketed module,Arduino Leonardo R3-compatible board,N/A,Caterina bootloader; shield plugs into existing headers
+SW1 SW2 SW3 SW4 S5 SW6,6,JST-XH 2-pin 2.50 mm vertical header,Through-hole,JST B2B-XH-A(LF)(SN),JST XHP-2 housing + 2x SXH-001T-P0.6 contacts,One signal and one GND per connector
+SSD1306,1,JST-XH 4-pin 2.50 mm vertical header,Through-hole,JST B4B-XH-A(LF)(SN),JST XHP-4 housing + 4x SXH-001T-P0.6 contacts,Confirm OLED cable order GND/VCC/SCL/SDA
+KY-040,1,JST-XH 5-pin 2.50 mm vertical header,Through-hole,JST B5B-XH-A(LF)(SN),JST XHP-5 housing + 5x SXH-001T-P0.6 contacts,Confirm encoder cable order GND/VCC/SW/DT/CLK
+U1 8-pin header rows,2,1x8 2.54 mm male shield header,Through-hole,Generic breakaway or Arduino shield header,N/A,Match Leonardo digital/power header height
+U1 6-pin header rows,2,1x6 2.54 mm male shield header,Through-hole,Generic breakaway or Arduino shield header,N/A,Match Leonardo analog header height
+External switches,5,Normally-open momentary mushroom push button,Panel / cable,User supplied,2-wire lead to XHP-2,SW1-SW4 and SW6 macro inputs
+External S5,1,Maintained or momentary normally-open switch,Panel / cable,User supplied,2-wire lead to XHP-2,Choose firmware variant to match switch type
+External OLED,1,0.96 inch 128x64 SSD1306 I2C 0x3C module,Cable / panel,User supplied,4-wire lead to XHP-4,Must tolerate selected 5 V power and I/O arrangement
+External encoder,1,KY-040 rotary encoder module with push switch,Cable / panel,User supplied,5-wire lead to XHP-5,Module pin orders vary; follow signal names
